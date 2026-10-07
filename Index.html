@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Sports - Home</title>
+    <style>
+        /* Modern Reset & CSS Variables */
+        :root {
+            --primary: #0f172a;
+            --accent: #2563eb;
+            --accent-glow: #3b82f6;
+            --text-light: #f8fafc;
+            --text-dark: #334155;
+            --bg-light: #f1f5f9;
+            --card-bg: #ffffff;
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--bg-light);
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        /* Header & Navigation */
+        header {
+            background-color: var(--primary);
+            color: var(--text-light);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            text-decoration: none;
+            color: var(--text-light);
+            font-size: 1.5rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+        }
+
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, var(--accent), #06b6d4);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+        }
+
+        .logo-icon svg {
+            width: 24px;
+            height: 24px;
+            fill: currentColor;
+        }
+
+        .logo span {
+            color: var(--accent-glow);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 1.5rem;
+        }
+
+        nav a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            transition: var(--transition);
+        }
+
+        nav a:hover,
+        nav a.active {
+            background-color: var(--accent);
+            color: #fff;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(15, 23, 42, 0.85), rgba(15, 23, 42, 0.85)),
+                url('https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&w=1200&q=80') center/cover no-repeat;
+            color: var(--text-light);
+            text-align: center;
+            padding: 5rem 2rem;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            font-weight: 800;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            max-width: 700px;
+            margin: 0 auto 2rem auto;
+            color: #cbd5e1;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--accent);
+            color: white;
+            padding: 0.75rem 1.75rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+
+        .btn:hover {
+            background-color: var(--accent-glow);
+            transform: translateY(-2px);
+        }
+
+        /* Main Content & Features */
+        main {
+            flex: 1;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 3rem;
+            color: var(--primary);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .card {
+            background: var(--card-bg);
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            transition: var(--transition);
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+
+        .card h3 {
+            margin-bottom: 0.75rem;
+            color: var(--primary);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--primary);
+            color: var(--text-light);
+            padding: 3rem 2rem 1.5rem 2rem;
+            margin-top: auto;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1.5rem;
+            text-align: center;
+        }
+
+        .thank-you {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--accent-glow);
+        }
+
+        .copyright {
+            font-size: 0.9rem;
+            color: #94a3b8;
+        }
+
+        .back-to-top {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--text-light);
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            text-decoration: none;
+            font-size: 0.875rem;
+            transition: var(--transition);
+            margin-top: 1rem;
+        }
+
+        .back-to-top:hover {
+            background-color: var(--accent);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 0.5rem;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+
+<body id="top">
+
+    <!-- Header Section -->
+    <header>
+        <div class="header-container">
+            <a href="#home" class="logo">
+                <div class="logo-icon">
+                    <!-- Futuristic Sports/AI Icon SVG -->
+                    <svg viewBox="0 0 24 24">
+                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z" />
+                    </svg>
+                </div>
+                AI<span>Sports</span>
+            </a>
+
+            <!-- Navigation Tabs -->
+            <nav>
+                <ul>
+                    <li><a href="Index.html" class="active">Home</a></li>
+                    <li><a href="Information.html">Information</a></li>
+                    <li><a href="FAQ.html">FAQ</a></li>
+                    <li><a href="AboutUs.html">About Us</a></li>
+                    <li><a href="ContactUs.html">Contact Us</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content Area -->
+    <m>
+        <!-- Hero Banner -->
+        <section id="home" class="hero">
+            <h1>Revolutionizing Athletics with AI</h1>
+            <p>Empowering athletes, coaches, and sports organizations with real-time performance analytics and predictive intelligence.</p>
+            <a href="Information.html" class="btn">Explore Features</a>
+        </section>
+        <table border="1" bgcolor="Grey" cellpadding="10" style="margin: 0 auto;">
+    <tr>
+        <td><img src="Images/images.jpg" width="100%" height="300"></td>
+        <td><img src="Images/images%20(1).jpg" width="100%" height="300"></td>
+    </tr>
+</table>
+        <!-- Features/Highlights -->
+        <section class="container">
+            <h2 class="section-title">Next-Gen Athletic Insights</h2>
+            <div class="features-grid">
+                <div class="card">
+                    <h3>Performance Tracking</h3>
+                    <p>Computer vision algorithms analyze biomechanics to optimize athletic movement and eliminate inefficiencies.</p>
+                </div>
+                <div class="card">
+                    <h3>Injury Prevention</h3>
+                    <p>Predictive modeling identifies fatigue risk factors before injuries occur, ensuring optimal recovery cycles.</p>
+                </div>
+                <div class="card">
+                    <h3>Tactical Strategy</h3>
+                    <p>Simulate millions of game-day scenarios to build winning strategies driven by historical data.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+     <div style="margin: 20px 0; text-align: center;">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/IbC-HtNrewE?si=KcCI6MpvvPwnvcNp" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="footer-content">
+            <div class="thank-you">Thank You for Visiting!</div>
+            <p class="copyright">&copy; 2026 AI Sports Technology Inc. All rights reserved.</p>
+            <a href="#top" class="back-to-top" title="Return to top of page">
+                ▲ Back to Top
+            </a>
+        </div>
+    </footer>
+
+</body>
+
+</html>

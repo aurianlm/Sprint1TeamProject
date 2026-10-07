@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background-color: #f8fafc;
+            color: #334155;
+            line-height: 1.6;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .page-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .page-header h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: #0f172a;
+            margin-bottom: 8px;
+        }
+
+        .page-header p {
+            color: #64748b;
+            font-size: 1.1rem;
+        }
+
+        /* Grid Layout */
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 24px;
+            margin-bottom: 40px;
+        }
+
+        /* Profile Cards */
+        .card {
+            background: #ffffff;
+            border-radius: 16px;
+            overflow: hidden;
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 12px 20px -4px rgba(0, 0, 0, 0.1);
+        }
+
+        .card-image-wrapper {
+            width: 100%;
+            height: 200px;
+            background-color: #f1f5f9;
+            overflow: hidden;
+        }
+
+        .card-image-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover .card-image-wrapper img {
+            transform: scale(1.05);
+        }
+
+        .placeholder {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            color: #94a3b8;
+            font-size: 0.9rem;
+            text-align: center;
+            padding: 15px;
+            background-color: #f1f5f9;
+        }
+
+        /* Card Text Content */
+        .card-body {
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        .card-name {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: #0f172a;
+            margin-bottom: 2px;
+        }
+
+        .card-title {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: #2563eb;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 12px;
+        }
+
+        .card-bio {
+            font-size: 0.925rem;
+            color: #475569;
+            margin-bottom: 16px;
+            flex-grow: 1;
+        }
+
+        .card-tag {
+            font-size: 0.85rem;
+            background: #f1f5f9;
+            padding: 8px 12px;
+            border-radius: 8px;
+            color: #475569;
+        }
+
+        .card-tag strong {
+            color: #0f172a;
+        }
+
+        /* Navigation Link */
+        .back-container {
+            text-align: center;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            padding: 12px 24px;
+            background-color: #2563eb;
+            color: #ffffff;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: background-color 0.2s ease;
+        }
+
+        .back-link:hover {
+            background-color: #1d4ed8;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header class="page-header">
+            <h1>About Us</h1>
+            <p>Get to know our team members and what inspires us</p>
+        </header>
+       
+        <div class="team-grid">
+            <!-- Lauren -->
+            <div class="card">
+                <div class="card-image-wrapper">
+                    <img src="images/IMG_0479.JPG">
+                </div>
+                <div class="card-body">
+                    <h3 class="card-name">Lauren Auriana</h3>
+                    <p class="card-bio">Sports communication and media and Nutrition major. I enjoy working out and hanging out with my friends. I love listenng to music and watching sports.</p>
+                    <div class="card-tag"><strong>HomeTown:</strong> Mason, OH</div>
+                </div>
+            </div>
+
+            <!-- Jayden -->
+            <div class="card">
+                <div class="card-image-wrapper">
+                    <img src="Images/IMG_4022.HEIC" >
+                </div>
+                <div class="card-body">
+                    <h3 class="card-name">Jayden Walter</h3>
+                    <p class="card-bio">Sports communication and media major. I enjoy eating food and playing video games with friends. I love football, lacrosse and basketball.</p>
+                    <div class="card-tag"><strong>HomeTown:</strong> Medina, OH</div>
+                </div>
+            </div>
+
+            <!-- Kathryn -->
+            <div class="card">
+                <div class="card-image-wrapper">
+                    <img src="Images/IMG_1705.JPG" alt="Kathryn Scollo">
+                </div>
+                <div class="card-body">
+                    <h3 class="card-name">Kathryn Scollo</h3>
+                    <p class="card-bio">Sports media and communicatins major, photography minor. I am on the equestrian team and enjoy working out.</p>
+                    <div class="card-tag"><strong>HomeTown:</strong> Wakefeild, MA</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="back-container">
+            <a href="Index.html" class="back-link">← Back to Home</a>
+        </div>
+    </div>
+
+</body>
+    </html>
